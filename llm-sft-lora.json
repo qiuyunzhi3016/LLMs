@@ -1,0 +1,48 @@
+{
+    "data_name": "smm4h2020",
+    "train_path": "/root/Datas/smm4h2020/train_knowledge.jsonl",
+    "dev_path": "/root/Datas/smm4h2020/dev_knowledge.jsonl",
+    "test_path": "/root/Datas/smm4h2020/test_knowledge.jsonl",
+
+    "model_name": "llama3-8b",
+    "llm_path": "/root/Download_models/Meta-Llama-3-8B-Instruct",
+    "lora_path": "/root/autodl-tmp/llm_lora/output/lora_model",
+    "merge_path": "/root/autodl-tmp/llm_lora/output/merge_model",
+    "prompt_format": "llama3",
+    "max_seq_length": 300,
+
+    "lora_rank": 64,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+
+    "output_dir": "/root/autodl-tmp/llm_lora/output",
+    "num_train_epochs": 1,
+    "learning_rate": 1e-4,
+    
+
+    "do_train": true,
+    "do_eval": true,
+    "do_predict": true,
+
+    "per_device_train_batch_size": 1,
+    "per_device_eval_batch_size": 1,
+    "gradient_accumulation_steps":16,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.05,
+    "lr_scheduler_type": "constant_with_warmup",
+    "dataloader_num_workers": 4,
+    "save_strategy": "epoch",
+    "logging_steps": 10,
+    
+
+    "evaluation_strategy": "epoch",
+    "load_best_model_at_end": true,
+    "metric_for_best_model": "eval_loss",
+    "save_total_limit": 1,
+    "tf32": false,
+    "bf16": false,
+    "ddp_find_unused_parameters": false,
+    "seed": 42,
+    "remove_unused_columns": false,
+    "overwrite_output_dir": true
+}
